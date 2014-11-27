@@ -23,8 +23,8 @@ LIB=p1 # libraries will be called p1.cma and p1.cmxa
 
 ```
 IGNORE_FOR_LIB:=$(MLS_TO_EXEC) interactive.ml # don't want these in the lib
-MLS_FOR_LIB:=$(shell ocamlfind ocamldep -sort *.ml)
-MLS_FOR_LIB:=$(filter-out $(IGNORE_FOR_LIB), $(MLS_FOR_LIB))
+MLS_FOR_LIB_1=$(shell ocamlfind ocamldep -sort *.ml)
+MLS_FOR_LIB=$(filter-out $(IGNORE_FOR_LIB), $(MLS_FOR_LIB_1))
 ```
 
   * If required, specify any includes using e.g.
